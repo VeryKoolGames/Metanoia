@@ -7,12 +7,16 @@ using Random = UnityEngine.Random;
 public class LevelGeneration : MonoBehaviour
 {
     public GameObject[] objects;
+    private int rand = -1;
     
     // Start is called before the first frame update
     void Start()
     {
-        int rand = Random.Range(0, objects.Length);
-        Instantiate(objects[rand], transform.position, Quaternion.identity);
+        if (rand == -1)
+        {
+            int rand = Random.Range(0, objects.Length);
+            Instantiate(objects[rand], transform.position, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
