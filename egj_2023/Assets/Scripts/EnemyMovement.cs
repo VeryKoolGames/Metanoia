@@ -8,13 +8,12 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 2f;
     private float initialSpeed;
-    public Animator transition;
-    [SerializeField] private float distanceEndsAt;
     private GameObject player;
 
     private void Start(){
         initialSpeed = speed;
         player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log(speed);
     }
 
     private void Update()
@@ -28,14 +27,13 @@ public class EnemyMovement : MonoBehaviour
         
         // change prefab when out of spotlight
         
-        // end of game because monster too close
-        if (distance <= distanceEndsAt && speed != 0)
-        {
-            Debug.Log("this is the end john, pao pao");
-            speed = 0;
-            // change scene to bad scene
-            
-        }
+        // // end of game because monster too close
+        // if (distance <= distanceEndsAt && speed != 0)
+        // {
+        //     AudioManager.Instance.playSound("JumpscareSound");
+        //     StartCoroutine(LevelManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex));
+        //     speed = 0;
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -46,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
             AudioManager.Instance.playSound("JumpscareSound");
             LevelManager.Instance.test();
             StartCoroutine(LevelManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex));
-            speed = 0;
+            // speed = 0;
         }
     }
 
