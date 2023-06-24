@@ -25,6 +25,8 @@ public class EnemyMovement : MonoBehaviour
         transform.position =
             Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         
+        // change prefab when out of spotlight
+        
         // end of game because monster too close
         if (distance <= distanceEndsAt && speed != 0)
         {
