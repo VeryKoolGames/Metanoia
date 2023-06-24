@@ -8,18 +8,7 @@ using Vector2 = UnityEngine.Vector2;
 
 public class EnemyMovement : MonoBehaviour
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    [SerializeField] private float speed = 0.5f;
-    // private float initialSpeed;
-    private GameObject player;
 
-    private void Start(){
-        // initialSpeed = speed;
-=======
-=======
-
->>>>>>> 0289184c04914d41e8dddb0f7e9fba2ac697b510
     [SerializeField] private float speed = 1f;
     private float initialSpeed;
     private GameObject player;
@@ -27,10 +16,6 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         initialSpeed = speed;
-<<<<<<< HEAD
->>>>>>> 051194c764e347eb49e750c0fc38b22c0d813477
-=======
->>>>>>> 0289184c04914d41e8dddb0f7e9fba2ac697b510
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -60,6 +45,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        var triggerSpeed = speed;
         if (other.tag == "Player")
         {
             AudioManager.Instance.playSound("JumpscareSound");
@@ -69,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
         else if (other.tag == "Torchlight")
         {
             Debug.Log("Found");
-            speed = 0.2f;
+            speed = 0.1f;
         }
     }
 
