@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] private float speed = 2f;
     private float initialSpeed;
     public Animator transition;
     [SerializeField] private float distanceEndsAt;
 
     private void Start(){
         initialSpeed = speed;
+        Debug.Log(initialSpeed);
     }
 
     private void Update()
@@ -36,7 +37,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        speed = 0;
+        if (other.tag == "Player")
+            speed = 0;
     }
 
     private void OnTriggerExit2D(Collider2D other)
