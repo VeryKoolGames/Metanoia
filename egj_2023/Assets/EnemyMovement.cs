@@ -5,25 +5,29 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    // public GameObject player;
     public float speed;
+    private float initialSpeed;
     public GameObject player;
-    public bool canMove = true;
+
+    private void Start(){
+        initialSpeed = speed;
+    }
 
     private void Update()
     {
-        if(!canMove)return;
-        // var player = GameObject.FindGameObjectWithTag("Player");
         var distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         transform.position =
             Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("XD");
-        // speed = 0;
-        canMove = false;
+        speed = 0;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        speed = initialSpeed;
     }
 }

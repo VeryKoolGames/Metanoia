@@ -1277,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 770532532468914497, guid: 4d991143b5bbdc54ca7fbed7764d716c, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 882141630807216586, guid: 4d991143b5bbdc54ca7fbed7764d716c, type: 3}
       propertyPath: player
       value: 
@@ -1295,11 +1299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4276538479371974932, guid: 4d991143b5bbdc54ca7fbed7764d716c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.38
+      value: -6.58
       objectReference: {fileID: 0}
     - target: {fileID: 4276538479371974932, guid: 4d991143b5bbdc54ca7fbed7764d716c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 4276538479371974932, guid: 4d991143b5bbdc54ca7fbed7764d716c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1378,8 +1382,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.11246467, y: 0.17994368}
+  m_Size: {x: 2.7544494, y: 3.979379}
   m_Direction: 0
 --- !u!1 &1130049986
 GameObject:
@@ -1498,6 +1502,7 @@ GameObject:
   - component: {fileID: 1308863551}
   - component: {fileID: 1308863552}
   - component: {fileID: 1308863553}
+  - component: {fileID: 1308863554}
   m_Layer: 0
   m_Name: DarkOverlay
   m_TagString: Untagged
@@ -1642,6 +1647,33 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 1
+--- !u!50 &1308863554
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308863549}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1320136797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +1868,8 @@ GameObject:
   - component: {fileID: 1766414658}
   - component: {fileID: 1766414659}
   - component: {fileID: 1766414660}
-  m_Layer: 0
+  - component: {fileID: 1766414661}
+  m_Layer: 6
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1967,7 +2000,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1987,6 +2020,33 @@ PolygonCollider2D:
       - {x: 2.6882322, y: 0.02821052}
       - {x: 5.7268853, y: 11.994499}
   m_UseDelaunayMesh: 0
+--- !u!50 &1766414661
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766414655}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1799490177
 GameObject:
   m_ObjectHideFlags: 0
