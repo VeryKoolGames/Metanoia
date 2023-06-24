@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
-    // public GameObject player;
     public float speed;
-    public bool canMove = true;
+    private float initialSpeed;
     public Animator transition;
+    [SerializeField] private float distanceEndsAt;
+
+    private void Start(){
+        initialSpeed = speed;
+    }
 
     private void Update()
     {
@@ -19,6 +23,15 @@ public class EnemyMovement : MonoBehaviour
         Vector2 direction = player.transform.position - transform.position;
         transform.position =
             Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        
+        // end of game because monster too close
+        if (distance <= distanceEndsAt && speed != 0)
+        {
+            Debug.Log("this is the end john, pao pao");
+            speed = 0;
+            // change scene to bad scene
+            
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,5 +43,11 @@ public class EnemyMovement : MonoBehaviour
             LevelManager.Instance.test();
             StartCoroutine(LevelManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex));
         }
+        speed = 0;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        speed = initialSpeed;
     }
 }
