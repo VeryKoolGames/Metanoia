@@ -20,10 +20,12 @@ public class EnemyMovement : MonoBehaviour
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         var distance = Vector2.Distance(transform.position, player.transform.position);
-        AudioManager.Instance.CheckMusicIntensity(distance);
+        // AudioManager.Instance.CheckMusicIntensity(distance); // to create in EACH scene
         Vector2 direction = player.transform.position - transform.position;
         transform.position =
             Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        
+        // change prefab when out of spotlight
         
         // end of game because monster too close
         if (distance <= distanceEndsAt && speed != 0)
@@ -43,8 +45,8 @@ public class EnemyMovement : MonoBehaviour
             AudioManager.Instance.playSound("JumpscareSound");
             LevelManager.Instance.test();
             StartCoroutine(LevelManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex));
+            speed = 0;
         }
-        speed = 0;
     }
 
     private void OnTriggerExit2D(Collider2D other)
