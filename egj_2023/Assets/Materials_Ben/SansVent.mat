@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 341a79788a715416dbdf0c48a01c9229, type: 3}
+  m_Name: SansVent
+  m_Shader: {fileID: -6465566751694194690, guid: 42c596d3faa66469da28f9f2bc75c0f0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -77,8 +77,8 @@ Material:
     - _thickness: 0
     - _windIsActive: 1
     - _windScale: 0.92
-    - _windSpeed: 0.31
-    - _windStrenght: 0.34
+    - _windSpeed: 0.19
+    - _windStrenght: 0.31
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Distortion_Position: {r: 1, g: 1, b: 0, a: 0}

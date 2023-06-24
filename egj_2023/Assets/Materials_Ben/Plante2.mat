@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseMaterial
+  m_Name: Plante2
   m_Shader: {fileID: -6465566751694194690, guid: 341a79788a715416dbdf0c48a01c9229, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -76,9 +76,9 @@ Material:
     - _strenght: 2.14
     - _thickness: 0
     - _windIsActive: 1
-    - _windScale: 0.92
-    - _windSpeed: 0.31
-    - _windStrenght: 0.34
+    - _windScale: 0.04
+    - _windSpeed: 6.75
+    - _windStrenght: 1.9
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Distortion_Position: {r: 1, g: 1, b: 0, a: 0}
