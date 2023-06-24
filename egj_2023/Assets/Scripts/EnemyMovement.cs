@@ -45,6 +45,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        var triggerSpeed = speed;
         if (other.tag == "Player")
         {
             AudioManager.Instance.playSound("JumpscareSound");
@@ -54,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
         else if (other.tag == "Torchlight")
         {
             Debug.Log("Found");
-            speed = 0.2f;
+            speed = 0.1f;
         }
     }
 
