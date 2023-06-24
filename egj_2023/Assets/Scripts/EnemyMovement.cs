@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         var distance = Vector2.Distance(transform.position, player.transform.position);
-
+        AudioManager.Instance.CheckMusicIntensity(distance);
         Vector2 direction = player.transform.position - transform.position;
         transform.position =
             Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
@@ -38,7 +38,13 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
-            speed = 0;
+        {
+            Debug.Log("Touched");
+            AudioManager.Instance.playSound("JumpscareSound");
+            LevelManager.Instance.test();
+            StartCoroutine(LevelManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex));
+        }
+        speed = 0;
     }
 
     private void OnTriggerExit2D(Collider2D other)
