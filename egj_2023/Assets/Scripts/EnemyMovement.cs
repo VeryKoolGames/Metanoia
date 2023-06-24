@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed;
+    public float speed = 2;
     private float initialSpeed;
     public GameObject player;
     public Animator transition;
