@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     // public GameObject player;
     public float speed;
+    public bool canMove = true;
 
     private void Update()
     {
