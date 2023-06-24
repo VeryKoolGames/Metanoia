@@ -1,11 +1,11 @@
 using UnityEngine;
 using System;
 
-public class MovementController : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour
 {
     private Camera mainCamera;
     public float moveSpeed = 10f;
-    public float rotationSpeed = 5f;
+    public float rotationSpeed = 100f;
 
     private void Start()
     {

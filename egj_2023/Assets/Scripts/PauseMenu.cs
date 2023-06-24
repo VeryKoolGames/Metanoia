@@ -6,12 +6,12 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject player;
-    private MovementController mc;
+    private PlayerMovementController mc;
     private bool isPaused = false;
     private string[] pausedPlayerComponents = new string[]{"MovementController", "RaycastController"};
 
     private void Start(){
-        mc = player.GetComponent<MovementController>();
+        mc = player.GetComponent<PlayerMovementController>();
     }
 
     private void Update()
