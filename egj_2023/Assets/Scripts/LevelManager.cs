@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     
     public IEnumerator LoadLevel(int sceneNumber)
     {
-        Debug.Log("In LEvel Manager");
+        Debug.Log("Changing Scene");
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
