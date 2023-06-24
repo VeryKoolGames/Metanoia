@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private float initialSpeed;
     public GameObject player;
     public Animator transition;
+    
     private void Start(){
         initialSpeed = speed;
     }
