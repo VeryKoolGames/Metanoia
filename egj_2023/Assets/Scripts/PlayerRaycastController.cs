@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerRaycastController : MonoBehaviour
 {
     private LineRenderer lineRenderer;
+    public Vector3 shootingPoint;
 
     void Start(){
         this.lineRenderer = GetComponent<LineRenderer>();
@@ -13,8 +14,9 @@ public class PlayerRaycastController : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, (worldPosition - transform.position).normalized, Mathf.Infinity);
-
+            LayerMask layerMask = LayerMask.GetMask("EnnemyLayer");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, (worldPosition - transform.position).normalized, Mathf.Infinity, layerMask);
+        
             if (hit.collider != null) {
                 Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
             }else{
