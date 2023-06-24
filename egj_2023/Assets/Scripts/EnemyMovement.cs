@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     private float initialSpeed;
     public GameObject player;
-
+    public Animator transition;
     private void Start(){
         initialSpeed = speed;
     }
