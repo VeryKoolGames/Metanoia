@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int x = Random.Range(0, 4);
+        int x = Random.Range(0, 5);
         GameObject enemyPrefab = enemyPrefabs.transform.GetChild(x).gameObject;
         Debug.Log(enemyPrefab.name);
         int y = Random.Range(0, 2);
