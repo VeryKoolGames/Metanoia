@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3340144046714805674}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce00248cdaa449aa84f8bcf61b9fb79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &3340144046714805674
 MonoBehaviour:
   m_ObjectHideFlags: 0
