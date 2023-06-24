@@ -1,0 +1,64 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[Serializable]
+public class KeyValuePair {
+    public string key;
+    public AudioSource val;
+}
+
+public class AudioManager : MonoBehaviour
+{
+    public static AudioManager Instance;
+
+    public AudioSource[] MainMusic;
+    public List<KeyValuePair> MyList = new List<KeyValuePair>();
+    private Dictionary<string, AudioSource> Sounds = new Dictionary<string, AudioSource>();
+
+    private void Awake()
+    {
+        Instance = this;
+        foreach (var kvp in MyList) {
+            Sounds[kvp.key] = kvp.val;
+        }
+    }
+
+    private void Start()
+    {
+        playMusic(0);
+    }
+
+    public void CheckMusicIntensity(float distance)
+    {
+        switch (distance)
+        {
+            case < 10f:
+                MainMusic[2].volume = 1;
+                break;
+            case < 15f:
+                MainMusic[1].volume = 1;
+                MainMusic[2].volume = 0;
+                break;
+            case < 50f:
+                MainMusic[2].volume = 0;
+                MainMusic[1].volume = 0;
+                break;
+        }
+    }
+
+    public void playMusic(int idx)
+    {
+        MainMusic[idx].Play();
+        MainMusic[1].Play();
+        MainMusic[1].volume = 0;
+        MainMusic[2].Play();
+        MainMusic[2].volume = 0;
+    }
+    
+    public void playSound(string soundName)
+    {
+        Sounds[soundName].Play();
+    }
+}

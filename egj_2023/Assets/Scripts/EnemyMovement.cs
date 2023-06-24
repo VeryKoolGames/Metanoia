@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         var distance = Vector2.Distance(transform.position, player.transform.position);
+        AudioManager.Instance.CheckMusicIntensity(distance);
         Vector2 direction = player.transform.position - transform.position;
         transform.position =
             Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
@@ -25,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Touched");
+            AudioManager.Instance.playSound("JumpscareSound");
             LevelManager.Instance.test();
             StartCoroutine(LevelManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex));
         }
