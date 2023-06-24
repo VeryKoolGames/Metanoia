@@ -6,6 +6,8 @@ public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private int ammoNumber = 2;
     [SerializeField] private GameObject ammoObject;
+    [SerializeField] private GameObject bulletOne;
+    [SerializeField] private GameObject bulletTwo;
     [SerializeField] private float bulletSpeed;
 
     // Update is called once per frame
@@ -31,5 +33,14 @@ public class PlayerShooting : MonoBehaviour
             Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         ammoNumber -= 1;
+        AudioManager.Instance.playSound("GunshotSound");
+        if (ammoNumber == 1)
+        {
+            bulletOne.SetActive(false);
+        }
+        else
+        {
+            bulletTwo.SetActive(false);
+        }
     }
 }
