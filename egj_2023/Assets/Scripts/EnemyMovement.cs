@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     private float initialSpeed;
-    public GameObject player;
     public Animator transition;
     
     private void Start(){
@@ -17,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        var player = GameObject.FindGameObjectWithTag("Player");
         var distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         transform.position =
