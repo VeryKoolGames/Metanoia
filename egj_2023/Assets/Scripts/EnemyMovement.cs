@@ -10,17 +10,17 @@ public class EnemyMovement : MonoBehaviour
     private float initialSpeed;
     public Animator transition;
     [SerializeField] private float distanceEndsAt;
+    private GameObject player;
 
     private void Start(){
         initialSpeed = speed;
-        Debug.Log(initialSpeed);
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
         var distance = Vector2.Distance(transform.position, player.transform.position);
-        AudioManager.Instance.CheckMusicIntensity(distance);
+        // AudioManager.Instance.CheckMusicIntensity(distance);
         Vector2 direction = player.transform.position - transform.position;
         transform.position =
             Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);

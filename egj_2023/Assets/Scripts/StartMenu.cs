@@ -9,7 +9,7 @@ public class StartMenu : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Salut");
-        SceneManager.LoadScene("Scene01");
+        SceneManager.LoadScene(1);
     }
     
     public void StartCredits()
