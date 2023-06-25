@@ -19,21 +19,15 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
         Instance = this;
         foreach (var kvp in MyList) {
             Sounds[kvp.key] = kvp.val;
         }
     }
 
-    // private void Start()
-    // {
-    //     playMusic(0);
-    // }
-
     public void CheckMusicIntensity(float distance)
     {
-        Debug.Log(distance);
         switch (distance)
         {
             case < 4f:

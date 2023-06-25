@@ -9,7 +9,9 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject bulletOne;
     [SerializeField] private GameObject bulletTwo;
     [SerializeField] private float bulletSpeed;
-    private bool isReloading = false;
+    [SerializeField] private Animator cameraAnim;
+    [SerializeField] private Animator playerAnim;
+    [SerializeField] private bool isReloading = false;
 
     // Update is called once per frame
     void Update()
@@ -35,6 +37,8 @@ public class PlayerShooting : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         ammoNumber -= 1;
         AudioManager.Instance.playSound("GunshotSound");
+        playerAnim.SetTrigger("shoots");
+        cameraAnim.SetTrigger("shoots");
         if (ammoNumber == 1)
         {
             bulletOne.SetActive(false);
@@ -49,6 +53,7 @@ public class PlayerShooting : MonoBehaviour
     
     private IEnumerator Reload()
     {
+        Debug.Log("RELOADING");
         yield return new WaitForSeconds(1f);
         AudioManager.Instance.playSound("ReloadSound");
         yield return new WaitForSeconds(1.2f);
