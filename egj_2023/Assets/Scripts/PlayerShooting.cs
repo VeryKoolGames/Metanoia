@@ -20,6 +20,11 @@ public class PlayerShooting : MonoBehaviour
         {
             Shoot();
         }
+        else if (ammoNumber <= 0 && !isReloading)
+        {
+            Reload();
+            AudioManager.Instance.playSound("EmptyGunSound");
+        }
     }
     
     void Shoot()
@@ -53,7 +58,6 @@ public class PlayerShooting : MonoBehaviour
     
     private IEnumerator Reload()
     {
-        Debug.Log("RELOADING");
         yield return new WaitForSeconds(1f);
         AudioManager.Instance.playSound("ReloadSound");
         yield return new WaitForSeconds(1.2f);
