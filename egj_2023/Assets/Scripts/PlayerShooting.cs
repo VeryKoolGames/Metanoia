@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    [SerializeField] private int ammoNumber = 2;
+    [SerializeField] private int ammoNumber = 3;
     [SerializeField] private GameObject ammoObject;
     [SerializeField] private GameObject bulletOne;
     [SerializeField] private GameObject bulletTwo;
+    [SerializeField] private GameObject bulletThree;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private Animator cameraAnim;
     [SerializeField] private Animator playerAnim;
@@ -48,9 +49,13 @@ public class PlayerShooting : MonoBehaviour
         {
             bulletOne.SetActive(false);
         }
-        else
+        else if ( ammoNumber == 2)
         {
             bulletTwo.SetActive(false);
+        }
+        else
+        {
+            bulletThree.SetActive(false);
         }
         isReloading = true;
         StartCoroutine(Reload());
