@@ -1340,7 +1340,13 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4186211392997568492, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
+    - {fileID: 9181034101924032642, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
+    - {fileID: 7517275792458129622, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
+    - {fileID: 1333467737653528565, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
+    - {fileID: 373649805310399685, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
+    - {fileID: 5135175816515883725, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
