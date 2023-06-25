@@ -12,6 +12,7 @@ public class BulletColliding : MonoBehaviour
             // Destroy(col.gameObject);
             GameObject enemy = col.gameObject;
             enemy.GetComponent<EnnemyHealthManager>().Hit();
+            AudioManager.Instance.playSound("HitSound");
             Debug.Log("EXPLOISION");
             //StartCoroutine(LevelManager.Instance.LoadLevel(2));
         }

@@ -225,10 +225,10 @@ RectTransform:
   m_Father: {fileID: 1188252947}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53, y: -60}
-  m_SizeDelta: {x: 574.0753, y: 108.7324}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -907, y: 480}
+  m_SizeDelta: {x: 574.0753, y: 108.73239}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &606766918
 MonoBehaviour:
@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: commencer
+  m_text: start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6444724101c9f41ffb83d7746bce44e3, type: 2}
   m_sharedMaterial: {fileID: 4568840491706058648, guid: 6444724101c9f41ffb83d7746bce44e3, type: 2}
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quitter
+  m_text: Quit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6444724101c9f41ffb83d7746bce44e3, type: 2}
   m_sharedMaterial: {fileID: 4568840491706058648, guid: 6444724101c9f41ffb83d7746bce44e3, type: 2}
@@ -1681,6 +1681,10 @@ PrefabInstance:
     - target: {fileID: 1329737118926854261, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093267999913982319, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6045732324569669333, guid: 09a404da1c6eb4c4a94db53f80f7bf0c, type: 3}
       propertyPath: m_Name

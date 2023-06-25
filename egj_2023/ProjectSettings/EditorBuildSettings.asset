@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/leo_credits.unity
     guid: 23f6a69ea6bb7d44ea15f4c76d8db3fb
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 00bece01c766e4116b8af3dd5c29b44d
   m_configObjects: {}
