@@ -28,7 +28,6 @@ public class EnnemyHealthManager : MonoBehaviour
             StartCoroutine(LevelManager.Instance.LoadLevel(2));
             AudioManager.Instance.playSound("DyingSound");
             enemy.gameObject.GetComponent<EnemyMovement>().speed = 0f;
-            enemy.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
