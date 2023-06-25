@@ -1,17 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    [SerializeField] private int ammoNumber = 2;
+    [SerializeField] private int ammoNumber = 3;
     [SerializeField] private GameObject ammoObject;
     [SerializeField] private GameObject bulletOne;
     [SerializeField] private GameObject bulletTwo;
+    [SerializeField] private GameObject bulletThree;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private Animator cameraAnim;
     [SerializeField] private Animator playerAnim;
     [SerializeField] private bool isReloading = false;
+    [SerializeField] private GameObject aimLine;
+    private GameObject enemy;
+
+    private void Start()
+    {
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,6 +28,11 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && ammoNumber > 0 && !isReloading)
         {
             Shoot();
+        }
+        else if (ammoNumber <= 0 && !isReloading)
+        {
+            Reload();
+            AudioManager.Instance.playSound("EmptyGunSound");
         }
     }
     
@@ -39,13 +53,19 @@ public class PlayerShooting : MonoBehaviour
         AudioManager.Instance.playSound("GunshotSound");
         playerAnim.SetTrigger("shoots");
         cameraAnim.SetTrigger("shoots");
-        if (ammoNumber == 1)
+        if (ammoNumber == 2)
         {
             bulletOne.SetActive(false);
         }
-        else
+        else if ( ammoNumber == 1)
         {
             bulletTwo.SetActive(false);
+        }
+        else
+        {
+            bulletThree.SetActive(false);
+            aimLine.tag = "Untagged";
+            enemy.GetComponent<EnemyMovement>().speed = 3f;
         }
         isReloading = true;
         StartCoroutine(Reload());
@@ -53,7 +73,6 @@ public class PlayerShooting : MonoBehaviour
     
     private IEnumerator Reload()
     {
-        Debug.Log("RELOADING");
         yield return new WaitForSeconds(1f);
         AudioManager.Instance.playSound("ReloadSound");
         yield return new WaitForSeconds(1.2f);

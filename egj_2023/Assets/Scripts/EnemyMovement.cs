@@ -9,7 +9,7 @@ using Vector2 = UnityEngine.Vector2;
 public class EnemyMovement : MonoBehaviour
 {
 
-    [SerializeField] private float speed = 1f;
+    public float speed = 1f;
     private float initialSpeed;
     private GameObject player;
 
@@ -52,15 +52,18 @@ public class EnemyMovement : MonoBehaviour
             LevelManager.Instance.test();
             StartCoroutine(LevelManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex));
         }
-        else if (other.tag == "Torchlight")
+        else if (other.tag == "AimLine")
         {
             Debug.Log("Found");
-            speed = 0.1f;
+            speed = 0f;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // speed = initialSpeed;
+        if (other.tag == "AimLine")
+        {
+            speed = initialSpeed;
+        }
     }
 }

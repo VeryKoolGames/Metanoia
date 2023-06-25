@@ -12,7 +12,6 @@ public class NewBehaviourScript : MonoBehaviour
     {
                 mySpriteRenderer = GetComponent<SpriteRenderer>();
                 mySpriteRenderer.flipX = true;
-
     }
 
     // Update is called once per frame
