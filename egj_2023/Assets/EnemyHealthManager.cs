@@ -22,13 +22,13 @@ public class EnnemyHealthManager : MonoBehaviour
             health--;
             Debug.Log("Health is now " + health);
             if(health != 0) {
-                AudioManager.Instance.playSound("HitSound");
                 Respawn();
                 return;
             }
-            AudioManager.Instance.playSound("DyingSound");
-            Destroy(enemy.gameObject);
             StartCoroutine(LevelManager.Instance.LoadLevel(2));
+            AudioManager.Instance.playSound("DyingSound");
+            enemy.gameObject.GetComponent<EnemyMovement>().speed = 0f;
+            enemy.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 

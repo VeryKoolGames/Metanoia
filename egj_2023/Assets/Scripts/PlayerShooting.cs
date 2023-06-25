@@ -29,7 +29,7 @@ public class PlayerShooting : MonoBehaviour
         {
             Shoot();
         }
-        else if (ammoNumber <= 0 && !isReloading)
+        else if (Input.GetMouseButtonDown(0) && ammoNumber <= 0 && !isReloading)
         {
             Reload();
             AudioManager.Instance.playSound("EmptyGunSound");
