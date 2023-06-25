@@ -33,12 +33,13 @@ public class AudioManager : MonoBehaviour
 
     public void CheckMusicIntensity(float distance)
     {
+        Debug.Log(distance);
         switch (distance)
         {
-            case < 10f:
+            case < 4f:
                 MainMusic[2].volume = 1;
                 break;
-            case < 15f:
+            case < 7f:
                 MainMusic[1].volume = 1;
                 MainMusic[2].volume = 0;
                 break;

@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431703101}
-  - component: {fileID: 431703100}
+  - component: {fileID: 431703102}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -201,20 +201,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &431703100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431703099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 501dbc4beed53164283128392bf6369f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionTime: 1
-  transition: {fileID: 1283688300}
 --- !u!4 &431703101
 Transform:
   m_ObjectHideFlags: 0
@@ -230,6 +216,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &431703102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431703099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89c559a95eae554d84b6e85b8e02bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 1283688300}
 --- !u!1 &842270001
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,9 +438,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 598375487406548971, guid: 55c1757a2e94f2b49af7f9d10b45ee39, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03fd6a9819968b04da872221e7f90636, type: 2}
     - target: {fileID: 3469698782655762984, guid: 55c1757a2e94f2b49af7f9d10b45ee39, type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469698782655762984, guid: 55c1757a2e94f2b49af7f9d10b45ee39, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118392456486233032, guid: 55c1757a2e94f2b49af7f9d10b45ee39, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8827297766272945348, guid: 55c1757a2e94f2b49af7f9d10b45ee39, type: 3}
       propertyPath: m_RootOrder
@@ -631,13 +642,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5287718627807572249, guid: 7163ce5e355414da79585880d9f137b8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6563397474466284225, guid: 7163ce5e355414da79585880d9f137b8, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2184140809708903490, guid: 7163ce5e355414da79585880d9f137b8, type: 3}
+    - {fileID: 5249478450857794862, guid: 7163ce5e355414da79585880d9f137b8, type: 3}
+    - {fileID: 2586574940204644238, guid: 7163ce5e355414da79585880d9f137b8, type: 3}
+    - {fileID: 6378406777981477385, guid: 7163ce5e355414da79585880d9f137b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
