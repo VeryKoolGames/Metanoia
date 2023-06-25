@@ -27,6 +27,7 @@ public class EnnemyHealthManager : MonoBehaviour
                 return;
             }
             AudioManager.Instance.playSound("DyingSound");
+            Destroy(enemy.gameObject);
             StartCoroutine(LevelManager.Instance.LoadLevel(2));
         }
     }
