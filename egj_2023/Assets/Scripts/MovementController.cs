@@ -27,17 +27,10 @@ public class MovementController : MonoBehaviour
         //     float rotationAmount = horizontalInput * rotationSpeed * Time.deltaTime;
         //     transform.RotateAround(transform.position, Vector3.up, rotationAmount);
         // }
-
-        
         //Vector3 movementDirection = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z) * Vector3.right;
         Vector3 movement = new Vector3(horizontalInput,verticalInput, 0);
         movement = movement.normalized * moveSpeed * Time.deltaTime;
-
         // Apply movement
-        transform.position += movement;
-
-        // Movement
-        movement = transform.up * verticalInput * moveSpeed * Time.deltaTime;
         transform.position += movement;
     }
 
