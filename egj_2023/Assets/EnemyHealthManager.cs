@@ -28,6 +28,8 @@ public class EnnemyHealthManager : MonoBehaviour
             StartCoroutine(LevelManager.Instance.LoadLevel(2));
             AudioManager.Instance.playSound("DyingSound");
             enemy.gameObject.GetComponent<EnemyMovement>().speed = 0f;
+            Vector3 spawnPosition = new Vector3(1000, 1000, 0);
+            enemy.transform.position = spawnPosition;
         }
     }
 

@@ -6,6 +6,7 @@ public class MovementController : MonoBehaviour
     private Camera mainCamera;
     public float moveSpeed = 10f;
     public float rotationSpeed = 5f;
+    public Transform torchLightTransform;
 
     private void Start()
     {
@@ -28,7 +29,7 @@ public class MovementController : MonoBehaviour
         Vector3 directionToMouse = mouseWorldPosition - transform.position;
 
         // Rotate the character to face the mouse position
-        transform.up = directionToMouse.normalized;
+        torchLightTransform.up = directionToMouse.normalized;
     }
     
 }

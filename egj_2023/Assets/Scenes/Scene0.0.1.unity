@@ -353,6 +353,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 890122024111776954, guid: c04b4dd86c7f5464fb236d2cd1f84576, type: 3}
   m_PrefabInstance: {fileID: 1861293946}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &165693327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165693326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f62313df7e6e428e800cad2dfd56569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theSR: {fileID: 1179699543}
 --- !u!1 &167551742
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,6 +6578,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &656249930 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7360765778876671167, guid: c04b4dd86c7f5464fb236d2cd1f84576, type: 3}
+  m_PrefabInstance: {fileID: 1861293946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &748495935
 GameObject:
   m_ObjectHideFlags: 0
@@ -8089,6 +8107,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1179699543 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5923659389434098682, guid: c04b4dd86c7f5464fb236d2cd1f84576, type: 3}
+  m_PrefabInstance: {fileID: 1861293946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1194707788
 GameObject:
   m_ObjectHideFlags: 0
@@ -8990,7 +9013,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c46c5b8267986b34f946ac6e312b8ef1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9665,10 +9688,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: AimLine
       objectReference: {fileID: 0}
+    - target: {fileID: 8931503141083747504, guid: c04b4dd86c7f5464fb236d2cd1f84576, type: 3}
+      propertyPath: torchLightTransform
+      value: 
+      objectReference: {fileID: 656249930}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 890122024111776954, guid: c04b4dd86c7f5464fb236d2cd1f84576, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 165693327}
     - targetCorrespondingSourceObject: {fileID: 7971598321313363093, guid: c04b4dd86c7f5464fb236d2cd1f84576, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1488395564}
