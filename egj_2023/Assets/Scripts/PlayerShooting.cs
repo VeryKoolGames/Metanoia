@@ -25,14 +25,17 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && ammoNumber > 0 && !isReloading)
+        if (Time.timeScale != 0)
         {
-            Shoot();
-        }
-        else if (Input.GetMouseButtonDown(0) && ammoNumber <= 0 && !isReloading)
-        {
-            Reload();
-            AudioManager.Instance.playSound("EmptyGunSound");
+            if (Input.GetMouseButtonDown(0) && ammoNumber > 0 && !isReloading)
+            {
+                Shoot();
+            }
+            else if (Input.GetMouseButtonDown(0) && ammoNumber <= 0 && !isReloading)
+            {
+                Reload();
+                AudioManager.Instance.playSound("EmptyGunSound");
+            }
         }
     }
     
