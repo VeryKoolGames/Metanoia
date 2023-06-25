@@ -12,6 +12,7 @@ public class KeyValuePair {
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    private float musicVolume = .2f;
 
     public AudioSource[] MainMusic;
     public List<KeyValuePair> MyList = new List<KeyValuePair>();
@@ -31,10 +32,10 @@ public class AudioManager : MonoBehaviour
         switch (distance)
         {
             case < 4f:
-                MainMusic[2].volume = 1;
+                MainMusic[2].volume = musicVolume;
                 break;
             case < 7f:
-                MainMusic[1].volume = 1;
+                MainMusic[1].volume = musicVolume;
                 MainMusic[2].volume = 0;
                 break;
             case < 50f:

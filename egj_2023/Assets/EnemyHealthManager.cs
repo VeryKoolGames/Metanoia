@@ -21,10 +21,12 @@ public class EnnemyHealthManager : MonoBehaviour
         if(health > 0){
             health--;
             Debug.Log("Health is now " + health);
-            if(health != 0){
+            if(health != 0) {
+                AudioManager.Instance.playSound("HitSound");
                 Respawn();
                 return;
             }
+            AudioManager.Instance.playSound("DyingSound");
             StartCoroutine(LevelManager.Instance.LoadLevel(2));
         }
     }
