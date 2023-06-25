@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
         int x = Random.Range(0, 5);
         GameObject enemyPrefab = enemyPrefabs.transform.GetChild(x).gameObject;
         Debug.Log(enemyPrefab.name);
-        int y = Random.Range(0, 2);
+        int y = Random.Range(0, spawnZones.Count);
         BoxCollider2D spawnZone = spawnZones[y];
         Vector2 pos = GetRandomPointInCollider(spawnZone);
         Instantiate(enemyPrefab, pos, Quaternion.identity);
